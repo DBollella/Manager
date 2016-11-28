@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { employeeUpdate } from '../actions';
 import { Button, Card, CardSection, Input } from './common';
 
 class EmployeeCreate extends Component {
