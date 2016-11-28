@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Text } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Button, Card, CardSection, Input } from './common';
@@ -40,6 +41,10 @@ class LoginForm extends Component {
           />
         </CardSection>
 
+        <Text style={styles.errorTextStyle}>
+          {this.props.error}
+        </Text>
+
         <CardSection>
           <Button onPress={this.onButtonPress.bind(this)}>
             Log In
@@ -50,13 +55,19 @@ class LoginForm extends Component {
   }
 }
 
+const styles = {
+  errorTextStyle: {
+    color: 'red',
+    fontSize: 20,
+    alignSelf: 'center'
+  }
+};
+
 // Only map the props that we want to use
-const mapStateToProps = state => {
-  return {
-    // auth is the reducer that produces email 
-    email: state.auth.email,
-    password: state.auth.password
-  };
+const mapStateToProps = ({ auth }) => {
+  // just the auth piece of state
+  const { email, password, error } = auth;
+  return { email, password, error };
 };
 
 export default connect(mapStateToProps, {
