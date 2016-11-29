@@ -3,7 +3,8 @@ import { Actions } from 'react-native-router-flux';
 
 import {
   EMPLOYEE_CREATE,
-  EMPLOYEE_FORM_UPDATE
+  EMPLOYEE_FORM_UPDATE,
+  EMPLOYEE_FETCH_SUCCESS
 } from './types';
 
 // used for all updates in the employee form
@@ -27,3 +28,13 @@ export const employeeCreate = ({ name, phone, shift }) => {
   };
 };
 
+export const employeeFetch = () => {
+  const { currentUser } = firebase.auth();
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/employees`)
+      .on('value', snapshot => {
+        dispatch({ type: EMPLOYEE_FETCH_SUCCESS, payload: snapshot.val() });
+      });
+  };
+};
