@@ -14,3 +14,4 @@ You can Text an employee with their next shift and you can select Fire to remove
 
 ## Known issues
 After clicking on an employee and not making any modification, their info will remain on the form when you add the next employee.
+And I just realized I forgot to implement the logout button.
