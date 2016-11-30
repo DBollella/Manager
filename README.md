@@ -1,5 +1,5 @@
 
-# ![Manager App](http://i.imgur.com/OTnzhbD.png)  Manager
+# Manager
 
 ## Technologies used
 
