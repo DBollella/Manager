@@ -12,6 +12,14 @@ On the Login screen enter your e-mail and password. If you don't have an account
 On the Employees screen you can see the Employees you added. Click the add button to add a new employee. Choose their name, phone and work shift day. When you hit 'create' it will be added to the database. 
 You can Text an employee with their next shift and you can select Fire to remove them from the database.
 
+### Android APK
+This app is available for Android.
+
+[Download](https://github.com/she-dev/Manager/files/625678/app-release.apk.zip)
+
+### Demo
+![](http://i.imgur.com/exKbvcs.gif)
+
 ## Known issues
 After clicking on an employee and not making any modification, their info will remain on the form when you add the next employee.
 And I just realized I forgot to implement the logout button.
