@@ -1,13 +1,23 @@
 import React from 'react';
 import { Actions, Router, Scene } from 'react-native-router-flux';
+import firebase from 'firebase';
 import EmployeeCreate from './components/EmployeeCreate';
 import EmployeeEdit from './components/EmployeeEdit';
 import EmployeeList from './components/EmployeeList';
 import LoginForm from './components/LoginForm';
+import HomeScreen from './components/HomeScreen';
 
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
+
+      <Scene key="homeScreen">
+        <Scene 
+          key="home"
+          component={HomeScreen}
+        />
+      </Scene>
+      
       <Scene key="auth">
         <Scene 
           key="login"
@@ -22,6 +32,11 @@ const RouterComponent = () => {
           key="employeeList"
           rightTitle="Add"
           onRight={() => Actions.employeeCreate()}
+          leftTitle="Log out"
+          onLeft={() => {
+            firebase.auth().signOut();
+            Actions.homeScreen();
+          }}
           title="Employees"
           initial
         />
@@ -36,6 +51,8 @@ const RouterComponent = () => {
           title="Edit Employee"
         />
       </Scene>
+
+      
     </Router>
   );
 };
