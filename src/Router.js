@@ -5,18 +5,10 @@ import EmployeeCreate from './components/EmployeeCreate';
 import EmployeeEdit from './components/EmployeeEdit';
 import EmployeeList from './components/EmployeeList';
 import LoginForm from './components/LoginForm';
-import HomeScreen from './components/HomeScreen';
 
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-
-      <Scene key="homeScreen">
-        <Scene 
-          key="home"
-          component={HomeScreen}
-        />
-      </Scene>
       
       <Scene key="auth">
         <Scene 
@@ -35,10 +27,10 @@ const RouterComponent = () => {
           leftTitle="Log out"
           onLeft={() => {
             firebase.auth().signOut();
-            Actions.homeScreen();
+            setTimeout(() =>
+              Actions.auth());
           }}
           title="Employees"
-          initial
         />
         <Scene
           component={EmployeeCreate}
