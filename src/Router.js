@@ -27,6 +27,7 @@ const RouterComponent = () => {
           leftTitle="Log out"
           onLeft={() => {
             firebase.auth().signOut();
+            Actions.pop();
             setTimeout(() =>
               Actions.auth());
           }}
