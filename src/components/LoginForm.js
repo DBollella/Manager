@@ -10,7 +10,6 @@ class LoginForm extends Component {
   }
 
   onPasswordChange(text) {
-    // Action creator passwordChanged
     this.props.passwordChanged(text);
   }
 
