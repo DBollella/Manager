@@ -15,7 +15,7 @@ You can Text an employee with their next shift and you can select Fire to remove
 ### Android APK
 This app is available for Android.
 
-[Download](https://github.com/she-dev/Manager/files/625678/app-release.apk.zip)
+[Download](https://github.com/she-dev/Manager/files/643973/manager-latest.apk.zip) * **Updated** *
 
 ### Demo
 ![](http://i.imgur.com/exKbvcs.gif)
